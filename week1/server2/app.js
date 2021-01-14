@@ -2,10 +2,11 @@
 var http = require('http')
 
 http.createServer(function(request, response){
+    var url = request.url
     //http header
     response.writeHead(200, {'Content-type':'text/plain'})
     //Send a response to the body of the html
-    response.end("Wouldn't you like to be a pepper too???")
+    response.end('URL requested\n' + url)
 }).listen(3000);
 
 console.log("Server is running on port 3000")
