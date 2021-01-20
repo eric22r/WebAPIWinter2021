@@ -1,0 +1,16 @@
+{
+  "name": "raboin_assignment1",
+  "version": "1.0.0",
+  "description": "Week 1 Assignment",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eric Raboin",
+  "license": "ISC"
+}

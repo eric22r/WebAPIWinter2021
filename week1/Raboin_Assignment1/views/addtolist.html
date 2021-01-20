@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add To List (Non Working)</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Add To List Page (Non Working)</h1>
+    <input type="text" name="item">
+    <br><br>
+    <button>Add To List</button>
+    <div class = "addtolist"></div>
+    <div>  ||  <a href="index.html"> Home Page</a>  ||  
+        <a href="addtolist.html"> Add New Entries</a>  ||  
+        <a href="login.html"> Secure and Login</a>  ||  </div>
+    <script>
+        var ws = new WebSocket('ws://localhost:3000', 'echo-protocol'),
+        item = document.querySelector('input[name="item"]')
+
+        document.querySelector('button').addEventListener('click', addToList)
+
+        function addToList(){
+            ws.send(item.value)
+        }
+
+    </script>
+
+</body>
+</html>
