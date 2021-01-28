@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Avoidance</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Game List</h1>
+        <nav>
+            <a href="index.html">Replay</a>
+            <a href="#">Game List</a>
+        </nav>
+        <script>
+            fetch('/getData').then(function(scores){
+                scores.json().then(function(theScores){
+                    console.log(theScores)
+                    for(let score of theScores.score){
+                        var gameElement = document.createElement('p')
+                        gameElement.innerHTML = 'Name: ' + score.name + " Score: " + score.score
+                        document.getElementById('container').appendChild(gameElement)
+                    }
+                })
+            })
+        </script>
+    </div>
+</body>
+</html>
